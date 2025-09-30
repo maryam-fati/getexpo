@@ -170,16 +170,16 @@ const page = () => {
     useEffect(() => {
         if (title2 == 'looking-to-optimize') {
             setData(FullData.page_2_2)
-            setVideo('/VSL2.mp4')
+            setVideo('https://drive.google.com/file/d/1RxJmPPzr6I2qCUS9y687jQPqg0As7cp0/preview')
 
         } else if (title2 == "looking-to-scale") {
             setData(FullData.page_2_1)
-            setVideo('/VSL3.mp4')
+            setVideo('https://drive.google.com/file/d/1VNI3AONMVuR8Q-7zbVUOJcoMk8jwOj6F/preview')
 
 
         } else if (title2 == "just-starting") {
             setData(FullData.page_2_3)
-            setVideo('/VSL3.mp4')
+            setVideo('https://drive.google.com/file/d/1VNI3AONMVuR8Q-7zbVUOJcoMk8jwOj6F/preview')
 
         } else {
             setData(FullData.page_2_1)
@@ -332,7 +332,14 @@ const page = () => {
                     <div className="Videocont w-full flex my-20 items-center justify-center px-4 md:px-0">
 
                         {/* <iframe className='Video' width="761" height="428" src="https://1drv.ms/v/c/c3b46c3c90c89740/EfbC42Md-edDnojwy-bVlrIBpvZLQBx5yQPD72FZe8SBaQ?e=7uiAw8" title="Why You’re Not Seeing Results in Your Marketing" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe> */}
-                        <video width="761" height="428" src={video} controls></video>
+                        {/* <video width="761" height="428" src={video} controls></video> */}
+         <iframe
+        src={video}
+        width="640"
+        height="360"
+        allow="autoplay"
+        allowFullScreen
+      ></iframe>
                     </div>
 
                 </div>

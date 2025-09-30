@@ -1,0 +1,440 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* 🎨 Custom CSS Variables for Theme Colors */
+    --background: 255 30% 5%;
+    /* Dark navy/purple tone as HSL */
+    --foreground: 0 0% 100%;
+    /* White text on dark background */
+
+    --card: 255 30% 13%;
+    /* Slightly lighter for card bg */
+    --card-foreground: 0 0% 100%;
+    /* White text for card content */
+
+    --primary: 278 80% 60%;
+    /* Vibrant purple/pink for buttons, links */
+    --primary-foreground: 0 0% 100%;
+    /* Text color on primary bg */
+
+    --secondary: 180 100% 80%;
+    /* Soft cyan */
+    --secondary-foreground: 0 0% 20%;
+
+    --muted: 260 20% 20%;
+    /* Dim elements */
+    --accent: 300 100% 70%;
+    /* Neon magenta accents */
+
+    /* Design System Colors */
+    --brand-background: #120e20;
+    --brand-primary: #6366f1;
+    --brand-secondary: #ec4899;
+    --brand-text: #ffffff;
+    --brand-subtext: #9ca3af;
+  }
+
+  body {
+    background: black;
+
+
+    color: #ffffff;
+    font-family: "Inter", "Plus Jakarta Sans", sans-serif;
+  }
+}
+
+/* Add this in your CSS file */
+.text-stroke {
+  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.2);
+  color: white/5;
+}
+
+/* Enhanced scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgb(14, 11, 26);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, #6366f1, #ec4899);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(to bottom, #5855eb, #db2777);
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Enhanced animations */
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+
+  50% {
+    transform: translateY(-20px) rotate(5deg);
+  }
+}
+
+@keyframes pulse-glow {
+
+  0%,
+  100% {
+    box-shadow: 0 0 20px rgba(99, 102, 241, 0.3);
+    transform: scale(1);
+  }
+
+  50% {
+    box-shadow: 0 0 40px rgba(99, 102, 241, 0.6);
+    transform: scale(1.02);
+  }
+}
+
+@keyframes gradient-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes magnetic-float {
+
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+
+  25% {
+    transform: translate(10px, -10px) scale(1.1);
+  }
+
+  50% {
+    transform: translate(-5px, 10px) scale(0.9);
+  }
+
+  75% {
+    transform: translate(-10px, -5px) scale(1.05);
+  }
+}
+
+@keyframes backgroundShift {
+
+  0%,
+  100% {
+    background: radial-gradient(circle at 20% 80%, rgba(120, 119, 198, 0.1) 0%, transparent 50%),
+      radial-gradient(circle at 80% 20%, rgba(255, 119, 198, 0.1) 0%, transparent 50%),
+      radial-gradient(circle at 40% 40%, rgba(120, 219, 255, 0.1) 0%, transparent 50%);
+  }
+
+  50% {
+    background: radial-gradient(circle at 80% 20%, rgba(120, 119, 198, 0.15) 0%, transparent 50%),
+      radial-gradient(circle at 20% 80%, rgba(255, 119, 198, 0.15) 0%, transparent 50%),
+      radial-gradient(circle at 60% 60%, rgba(120, 219, 255, 0.15) 0%, transparent 50%);
+  }
+}
+
+@keyframes floatParticle {
+  0% {
+    transform: translateY(100vh) rotate(0deg);
+    opacity: 0;
+  }
+
+  10% {
+    opacity: 1;
+  }
+
+  90% {
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(-10vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+@keyframes cardFloat {
+
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+@keyframes shimmerSweep {
+  0% {
+    left: -100%;
+  }
+
+  50% {
+    left: -50%;
+  }
+
+  100% {
+    left: 100%;
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 3s ease-in-out infinite;
+}
+
+.animate-gradient-shift {
+  background-size: 200% 200%;
+  animation: gradient-shift 4s ease infinite;
+}
+
+.animate-magnetic-float {
+  animation: magnetic-float 8s ease-in-out infinite;
+}
+
+.animate-card-float {
+  animation: cardFloat 6s ease-in-out infinite;
+}
+
+/* Neumorphic glass effect */
+.glass-morphism {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+/* Typography enhancements */
+.text-gradient-primary {
+  background: linear-gradient(135deg, #6366ec 0%, #4899f1 100%, );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradient-shift 3s ease infinite;
+}
+
+.text-gradient-animated {
+  background: linear-gradient(270deg, #6366f1, #ec4899, #6366f1);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradient-shift 3s ease infinite;
+}
+
+/* Enhanced button styles */
+.btn-primary {
+  background: linear-gradient(135deg, #6366f1 0%, #ec4899 100%);
+  border: none;
+  color: white;
+  font-weight: 600;
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-primary::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.6s;
+}
+
+.btn-primary:hover::before {
+  left: 100%;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(99, 102, 241, 0.4);
+}
+
+/* Service card specific animations */
+.service-card {
+  animation: cardFloat 6s ease-in-out infinite;
+  position: relative;
+  overflow: hidden;
+}
+
+.service-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  animation: shimmerSweep 4s ease-in-out infinite;
+}
+
+.service-card::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: all 0.6s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-20px) scale(1.03) rotateX(5deg);
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4), 0 0 50px rgba(255, 255, 255, 0.1);
+  animation-play-state: paused;
+}
+
+.service-card:hover::after {
+  width: 300px;
+  height: 300px;
+}
+
+.scale-card {
+  animation-delay: 0s;
+}
+
+.consistent-card {
+  animation-delay: 2s;
+}
+
+.starting-card {
+  animation-delay: 4s;
+}
+
+
+.revenue-visualization-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.graph-container {
+  width: 100%;
+  height: auto;
+  margin-bottom: 1rem;
+}
+
+.metrics-panel {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  backdrop-filter: blur(10px);
+}
+
+.progress-bar {
+  width: 100%;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 3px;
+  margin-bottom: 1.5rem;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #4CAF50, #2196F3);
+  transition: width 0.1s linear;
+}
+
+.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
+}
+
+.metric-card {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 1rem;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.metric-card h3 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1rem;
+  color: #ccc;
+}
+
+.metric-card p {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: white;
+}
+
+@media (min-width: 1024px) {
+  .revenue-visualization-container {
+    position: fixed;
+    right: 2rem;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 35%;
+    z-index: 10;
+  }
+
+  .graph-container {
+    height: 300px;
+  }
+
+  .metrics-panel {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .metrics-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .metric-card h3 {
+    font-size: 0.9rem;
+  }
+
+  .metric-card p {
+    font-size: 1.2rem;
+  }
+}
+
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for Firefox */
+html {
+  scrollbar-width: none;
+  touch-action: auto;
+  /* or manipulation */
+}

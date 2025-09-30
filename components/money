@@ -1,0 +1,47 @@
+   const createRealisticMoney = () => {
+      const moneyGroup = new Mesh("moneyGroup", scene);
+
+      const bundleWidth = 1.2;
+      const bundleHeight = 0.6;
+      const bundleDepth = 2;
+      const numBills = 50; // Increased bills for denser stack
+      const billThickness = bundleHeight / numBills;
+
+      // Materials for bills (slightly different shades of green, resembling dollar bills)
+      const billMaterial1 = createStandardPhongMaterial("billMat1", new Color3(0.72, 0.77, 0.67), 5, new Color3(0.2, 0.2, 0.2)); // Soft green-gray
+      const billMaterial2 = createStandardPhongMaterial("billMat2", new Color3(0.65, 0.7, 0.6), 5, new Color3(0.2, 0.2, 0.2)); // Slightly deeper tone
+
+      const dollarTexture = new StandardMaterial("dollarTextureMat", scene);
+      dollarTexture.diffuseTexture = new Texture("textures/dollor.jpeg", scene);
+      // dollarTexture.diffuseTexture.uScale = 1;
+      // dollarTexture.diffuseTexture.vScale = 1;
+      dollarTexture.specularColor = new Color3(0, 0, 0);
+      dollarTexture.backFaceCulling = false;
+
+      // Create individual bill meshes with slight random variations
+      for (let i = 0; i < numBills; i++) {
+        const bill = MeshBuilder.CreateBox("bill" + i, { width: bundleWidth * 0.98, height: billThickness, depth: bundleDepth * 0.98 }, scene);
+        bill.position.y = (i * billThickness) - (bundleHeight / 2) + (billThickness / 2);
+        // bill.material = i % 2 === 0 ? billMaterial1 : billMaterial2; // Alternate colors
+        // bill.parent = moneyGroup;
+        if (i === 0 || i === numBills - 1) {
+          bill.material = dollarTexture; // Apply to top AND bottom bill
+        } else {
+          bill.material = i % 2 === 0 ? billMaterial1 : billMaterial2;
+        }
+        bill.parent = moneyGroup;
+        bill.rotation.y = (Math.random() - 0.5) * 0.05; // Small random yaw
+        bill.rotation.z = (Math.random() - 0.5) * 0.02; // Very small random roll
+        bill.position.x += (Math.random() - 0.5) * 0.02; // Small random x offset
+        bill.position.z += (Math.random() - 0.5) * 0.02; // Small random z offset
+      }
+
+      // Main bundle shape (invisible, just for sizing and shadow casting for the stack)
+      const bundleBase = MeshBuilder.CreateBox("bundleBase", { width: bundleWidth, height: bundleHeight, depth: bundleDepth }, scene);
+      bundleBase.material = createStandardBasicMaterial("bundleBaseMat", new Color3(0, 0, 0), false, 0); // Fully transparent
+      bundleBase.parent = moneyGroup;
+      shadowGenerator.addShadowCaster(bundleBase); // Cast shadow for the whole stack
+
+
+      return moneyGroup;
+    };

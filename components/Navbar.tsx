@@ -72,9 +72,9 @@ export default function Navbar() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             {/* Logo */}
-            <Link href="/" className="flex items-center group">
-              <motion.div whileHover={{ scale: 1.05 }} className="relative">
-                <img src="/logo.png" alt="" />
+            <Link href="/" className="">
+              <motion.div whileHover={{ scale: 1.05 }} className="">
+                <img src="/logo.png" alt="" className="w-[150px] object-cover" />
 
 
               </motion.div>
@@ -82,30 +82,7 @@ export default function Navbar() {
 
             {/* Desktop Navigation */}
             <div className="hidden md:flex items-center space-x-8">
-              {navItems.map((item, index) => (
-                <motion.div
-                  key={item.name}
-                  initial={{ opacity: 0, y: -20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                  whileHover={{ y: -2 }}
-                >
-                  <button
-                    onClick={() => scrollToSection(item.href)}
-                    className={`text-white/80 hover:text-white transition-colors duration-200 font-medium relative group ${activeSection === item.href.slice(1) ? "text-white" : ""
-                      }`}
-                  >
-                    {item.name}
-                    <motion.div
-                      className="absolute -bottom-1 left-0 h-0.5 bg-gradient-to-r from-[#6366F1] to-[#EC4899] rounded-full"
-                      initial={{ width: 0 }}
-                      animate={{ width: activeSection === item.href.slice(1) ? "100%" : 0 }}
-                      whileHover={{ width: "100%" }}
-                      transition={{ duration: 0.3 }}
-                    />
-                  </button>
-                </motion.div>
-              ))}
+ 
 
               <div className="flex items-center gap">
 {/* 

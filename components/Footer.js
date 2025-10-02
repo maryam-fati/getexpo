@@ -45,10 +45,8 @@ const Footer = () => {
                     <span className='flex items-center gap-2'>
                         <span> Designed by </span>
                         <span className='font-extralight text-blue-500 font-raleway text-2xl'>
-                            <a target='_blank' href="https://www.linkedin.com/in/maryam-fatima-rajput-91538925a/">
-
+                            <a target='_blank' href="https://www.linkedin.com/in/maryam-fatima-rajput/">
                                 Maryam Fatima
-
                             </a>
                         </span>
                         From

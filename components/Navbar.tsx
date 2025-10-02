@@ -74,14 +74,7 @@ export default function Navbar() {
             {/* Logo */}
             <Link href="/" className="flex items-center group">
               <motion.div whileHover={{ scale: 1.05 }} className="relative">
-                <motion.span
-                  className="text-2xl space-x-1 font-bold   font-raleway "
-                  style={{ fontSize: "1.5rem" }}
-                >
-                  <span className="text-white font-light font-poppins ">Get</span>
-                  
-                  <span className="text-gradient-animated text-3xl uppercase ">Exposure</span>
-                </motion.span>
+                <img src="/logo.png" alt="" />
 
 
               </motion.div>

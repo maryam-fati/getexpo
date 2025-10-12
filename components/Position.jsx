@@ -15,7 +15,7 @@ gsap.registerPlugin(ScrollTrigger)
 
 const Rocket = () => {
     return (
-        <div className='' style={{ position: "relative", width: 500, height: 500 }}>
+        <div className='relative h-[500px] w-[300px] md:w-[500px]'>
             <StarfieldCanvas />
             <RocketScene />
         </div>
@@ -82,7 +82,7 @@ const Position = () => {
                             }}
                         ></div>
 
-                        <nav className='flex items-center backdrop-blur-sm  py-4 rounded-full px-8 bg-[#00000041] gap-4 w-fit '>
+                        <nav className='flex  flex-wrap md:mx-auto items-center justify-center backdrop-blur-sm  py-4 rounded-full px-8 bg-[#00000041] gap-4 w-full md:w-fit '>
                             {[
                                 {
                                     id: "rocket",
@@ -108,7 +108,7 @@ const Position = () => {
                             `}
                                 >
                                     <span
-                                        className={`md:block hidden font-raleway tracking-wide transition-colors duration-300 ${selected === id ? "text-white " : "text-white group-hover:text-white/80"
+                                        className={`block  font-raleway tracking-wide transition-colors duration-300 ${selected === id ? "text-white " : "text-white group-hover:text-white/80"
                                             }`}
                                     >
                                         {text}
@@ -129,10 +129,10 @@ const Position = () => {
                             }`}
                     >
                         <div className=' relative bg-black'>
-                            <div className="absolute top-0 left-0 w-full h-[130px]  bg-gradient-to-b  rounded-full !z-[100] from-black via-black/20 to-transparent"></div>
-                            <div className="absolute top-0 right-0 w-[130px]   h-full  bg-gradient-to-l   !z-[100] from-black via-black/20 to-transparent"></div>
-                            <div className="absolute top-0 left-0 w-[130px]   h-full bg-gradient-to-r   !z-[100] from-black via-black/20 to-transparent"></div>
-                            <div className="absolute bottom-0  left-0 w-full h-[130px]  bg-gradient-to-t  rounded-full  !z-[100] from-black via-black/20 to-transparent"></div>
+                            {/* <div className="absolute top-0 left-0 w-full h-[130px]  bg-gradient-to-b  rounded-full !z-[100] from-black via-black/20 to-transparent"></div> */}
+                            {/* <div className="absolute top-0 right-0 w-[130px]   h-full  bg-gradient-to-l   !z-[100] from-black via-black/20 to-transparent"></div> */}
+                            {/* <div className="absolute top-0 left-0 w-[130px]   h-full bg-gradient-to-r   !z-[100] from-black via-black/20 to-transparent"></div> */}
+                            {/* <div className="absolute bottom-0  left-0 w-full h-[130px]  bg-gradient-to-t  rounded-full  !z-[100] from-black via-black/20 to-transparent"></div> */}
 
                             <Rocket />
                         </div>
@@ -182,7 +182,7 @@ const Position = () => {
 
                     {/* Parts Section */}
                     <div
-                        className={`flex   lg:flex-nowrap flex-wrap items-end    w-full transition-all duration-400 ${selected === 'parts' ? 'opacity-100 visible' : 'opacity-0 invisible absolute top-0 left-0'
+                        className={`flex   lg:flex-nowrap flex-wrap-reverse items-end    w-full transition-all duration-400 ${selected === 'parts' ? 'opacity-100 visible' : 'opacity-0 invisible absolute top-0 left-0'
                             }`}
                     >
 

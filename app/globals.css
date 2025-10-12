@@ -244,7 +244,14 @@ html {
   background-clip: text;
   animation: gradient-shift 3s ease infinite;
 }
+.backgradient {
+  background: linear-gradient(270deg, #6366f1, #ec4899, #6366f1);
+  background-size: 200% 200%;
 
+  animation: gradient-shift 3s ease infinite;
+
+
+}
 /* Enhanced button styles */
 .btn-primary {
   background: linear-gradient(135deg, #6366f1 0%, #ec4899 100%);

@@ -1,21 +1,21 @@
 'use client'
 import React, { useRef, useState, useEffect } from 'react'
 import { useRouter, useParams } from 'next/navigation'
-import { Button } from "@/components/ui/button"
 import { motion } from 'framer-motion'
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import SplitType from "split-type";
 import { useGSAP } from '@gsap/react';
-import PricingSection from "@/components/pricing-section"
+// import PricingSection from "@/components/pricing-section"
 import StatsSection from '@/components/stats-section'
 import EnhancedContactForm from "@/components/Contact"
-import ServicesSection from "@/components/services-section"
+// import ServicesSection from "@/components/services-section"
 gsap.registerPlugin(ScrollTrigger);
 
 
 import { MoveRight } from 'lucide-react';
 import Casestudies from '../../../components/Casestudies';
+import Navbar from '@/components/Navbar'
 const FullData = {
     page_2_3: [
         {
@@ -126,6 +126,7 @@ need before we switch platforms and then start working on those.`
 
 const page = () => {
     const [data, setData] = useState([])
+    const [action, setAction] = useState('')
     const [progress, setProgress] = useState(0);
     const [isMobile, setIsMobile] = useState(false);
     const [activeIndex, setActiveIndex] = useState()
@@ -170,15 +171,20 @@ const page = () => {
     useEffect(() => {
         if (title2 == 'looking-to-optimize') {
             setData(FullData.page_2_2)
+            setAction('https://calendly.com/rohittangri/looking-to-scale-clone')
             setVideo('https://drive.google.com/file/d/1RxJmPPzr6I2qCUS9y687jQPqg0As7cp0/preview')
 
         } else if (title2 == "looking-to-scale") {
             setData(FullData.page_2_1)
+            setAction('https://calendly.com/rohittangri/just-starting-out-clone')
+
             setVideo('https://drive.google.com/file/d/1VNI3AONMVuR8Q-7zbVUOJcoMk8jwOj6F/preview')
 
 
         } else if (title2 == "just-starting") {
             setData(FullData.page_2_3)
+            setAction('https://calendly.com/rohittangri/just-starting-out')
+
             setVideo('https://drive.google.com/file/d/1VNI3AONMVuR8Q-7zbVUOJcoMk8jwOj6F/preview')
 
         } else {
@@ -301,7 +307,7 @@ const page = () => {
 
     return (
         <>
-
+            <Navbar action={action} />
             <div className='relative pb-40'>
                 <div className="absolute w-full h-[200px] bg-gradient-to-t   z-[100] from-black via-black/30 to-transparent bottom-0 left-0">
                 </div>
@@ -347,13 +353,13 @@ const page = () => {
 
                     <div onClick={handleScroll} className="mx-auto">
 
-                        <Button className="btn-primary flex group hover:scale-105 item-center justify-between gap-4  !px-6 !py-6 text-lg rounded-full !font-extralight">
+                        <a href={action} target='_blank' className="btn-primary flex group hover:scale-105 item-center justify-between gap-4  !px-8 !py-4 text-lg rounded-full !font-extralight">
                             Get Started Today!
                             <span className="group-hover:translate-x-2 transition-all duration-300 ease-in-out">
 
                                 <MoveRight size={18} />
                             </span>
-                        </Button>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -391,7 +397,7 @@ const page = () => {
                                 />
                             </div>
                             <div
-                                className={`top-10 text-6xl fixed left-10 text-white transition-opacity duration-500 ${activeIndex === index ? 'opacity-100' : 'opacity-0 pointer-events-none'
+                                className={`top-10 text-xl lg:text-6xl fixed left-10 text-white transition-opacity duration-500 ${activeIndex === index ? 'opacity-100' : 'opacity-0 pointer-events-none'
                                     }`}
                             >
                                 {String(index + 1).padStart(2, '0')}
@@ -407,7 +413,7 @@ const page = () => {
 
                             <div
                                 ref={el => (textRefs.current[index] = el)}
-                                className={`absolute font-raleway tracking-widest !leading-relaxed !font-extralight top-1/2 left-1/2 container px-2 md:px-0  -translate-x-1/2 text-center text-xl lg:text-xl  text-gray-200 md:w-[100%]  transition-opacity ${activeIndex === index ? 'opacity-100' : 'opacity-0 pointer-events-none'
+                                className={`absolute font-poppins tracking-widest md:leading-relaxed !font-extralight top-1/2 left-1/2 container px-2 md:px-0  -translate-x-1/2 text-center text-sm lg:text-xl  text-gray-200 md:w-[100%]  transition-opacity ${activeIndex === index ? 'opacity-100' : 'opacity-0 pointer-events-none'
                                     }`}
                                 dangerouslySetInnerHTML={{ __html: text.description }}
                             ></div>
@@ -416,7 +422,7 @@ const page = () => {
 
                 </div>
             </div>
-            <div>f
+            <div>
                 <StatsSection />
             </div>
             <Casestudies />

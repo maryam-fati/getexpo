@@ -4,7 +4,7 @@ import { motion } from "framer-motion"
 import { Lightbulb, BarChart3, Package, ArrowRight, CheckCircle } from "lucide-react"
 import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { useFadeInAnimation, staggerContainer, staggerItem } from "./enhanced-animations"
+// import { useFadeInAnimation, staggerContainer, staggerItem } from "./enhanced-animations"
 
 const services = [
   {
@@ -64,23 +64,22 @@ const services = [
 ]
 
 export default function ServicesSection() {
-  const titleAnimation = useFadeInAnimation(0)
-  const subtitleAnimation = useFadeInAnimation(0.2)
+  // const titleAnimation = useFadeInAnimation(0)
+  // const subtitleAnimation = useFadeInAnimation(0.2)
 
   return (
     <section id="services" className="py-20 px-4 sm:px-6 lg:px-8 bg-slate-900/30">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
-          <motion.h2 {...titleAnimation} className="heading-secondary text-4xl md:text-5xl text-white mb-6">
+          <motion.h2  className="heading-secondary text-4xl md:text-5xl text-white mb-6">
             Our <span className="text-gradient-primary">Services</span>
           </motion.h2>
-          <motion.p {...subtitleAnimation} className="text-xl text-[#9CA3AF] max-w-3xl mx-auto leading-relaxed">
+          <motion.p  className="text-xl text-[#9CA3AF] max-w-3xl mx-auto leading-relaxed">
             Comprehensive advertising solutions designed to transform your campaigns and accelerate your business growth
           </motion.p>
         </div>
 
         <motion.div
-          variants={staggerContainer}
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, margin: "-100px" }}
@@ -89,7 +88,7 @@ export default function ServicesSection() {
           {services.map((service, index) => {
             const Icon = service.icon
             return (
-              <motion.div key={service.id} variants={staggerItem}>
+              <motion.div key={service.id} >
                 <Card className="glass-card h-full group relative overflow-hidden hover:scale-105 transition-all duration-300">
                   {/* Hover gradient overlay */}
                   <motion.div

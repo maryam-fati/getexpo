@@ -37,7 +37,7 @@ function AnimatedCounter({ value, suffix }: { value: number; suffix: string }) {
   useEffect(() => {
     if (isInView) {
       let startTime: number
-      const duration = 2000
+      const duration = 1000
 
       const animate = (currentTime: number) => {
         if (!startTime) startTime = currentTime
@@ -64,14 +64,10 @@ export default function StatsSection() {
     <section className="py-20 px-4 sm:px-6 lg:px-8 relative">
       {/* Background Glow */}
       <div className="absolute inset-0 overflow-hidden">
-        <motion.div
-          animate={{ scale: [1, 1.1, 1], opacity: [0.05, 0.1, 0.05] }}
-          transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
+        <div
           className="absolute -top-1/2 -left-1/2 w-full h-full bg-gradient-to-r from-purple-500/10 to-pink-500/10 rounded-full blur-3xl"
         />
-        <motion.div
-          animate={{ scale: [1.1, 1, 1.1], opacity: [0.05, 0.1, 0.05] }}
-          transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
+        <div
           className="absolute -bottom-1/2 -right-1/2 w-full h-full bg-gradient-to-l from-blue-500/10 to-cyan-500/10 rounded-full blur-3xl"
         />
       </div>
@@ -115,28 +111,22 @@ export default function StatsSection() {
             return (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, y: 40 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.2 }}
+
               >
                 <Card className="bg-white/5 backdrop-blur-md border-white/10 hover:border-white/20 transition-all duration-500 group relative overflow-hidden h-full">
                   <CardContent className="p-8 text-center relative z-10">
                     <motion.div
                       className={`w-20 h-20 rounded-2xl bg-gradient-to-r ${stat.color} flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300`}
-                      whileHover={{ rotate: 360 }}
-                      transition={{ duration: 0.6 }}
                     >
                       <Icon className="w-10 h-10 text-white" />
                     </motion.div>
 
-                    <motion.div
+                    <div
                       className="text-4xl md:text-5xl font-bold text-white mb-2"
-                      initial={{ scale: 0.9 }}
-                      whileInView={{ scale: 1 }}
-                      transition={{ duration: 0.5, delay: 0.2 }}
+
                     >
                       <AnimatedCounter value={stat.value} suffix={stat.suffix} />
-                    </motion.div>
+                    </div>
 
                     <motion.div
                       className="text-lg text-white/70 font-medium"

@@ -1,5 +1,4 @@
 "use client"
-
 import { motion } from "framer-motion"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
@@ -92,13 +91,13 @@ export default function CaseStudies() {
 
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-8xl font-poppins font-medium text-white mb-6">
+          <h2 className="text-3xl md:text-8xl font-poppins font-medium text-white mb-2 lg:mb-6">
             Real World{" "}
             <span className=" text-blue-300">
               Success Stories
             </span>
           </h2>
-          <p className="text-2xl font-poppins font-extralight text-blue-50 max-w-5xl mt-32 mx-auto leading-relaxed">
+          <p className="text-sm md:text-2xl font-poppins font-extralight text-blue-50 max-w-5xl mt-32 mx-auto leading-relaxed">
             Dive into the detailed journeys of businesses we've helped scale from mediocre results to consistent
             profitability. Each case study reveals exactly how we identified critical scaling barriers, implemented
             strategic solutions, and delivered measurable ROI.
@@ -106,10 +105,10 @@ export default function CaseStudies() {
         </div>
 
         <div className="relative ">
-          <div className="absolute left-0 !z-[100]  top-0 h-full w-[10%] bg-gradient-to-r from-black via-black/50 to-transparent pointer-events-none "></div>
+          <div className="absolute left-0 !z-[100]  top-0 h-full w-[2%] md:w-[10%] bg-gradient-to-r from-black via-black/50 to-transparent pointer-events-none "></div>
 
           {/* Right fade overlay */}
-          <div className="absolute right-0 !z-[100]  top-0 h-full w-[10%] bg-gradient-to-l from-black via-black/50 to-transparent pointer-events-none "></div>
+          <div className="absolute right-0 !z-[100]  top-0 h-full w-[2%] md:w-[10%] bg-gradient-to-l from-black via-black/50 to-transparent pointer-events-none "></div>
           {/* </div> */}
           <Marquee
             speed={50}
@@ -121,7 +120,7 @@ export default function CaseStudies() {
             {caseStudies.map((study, index) => (
               <div
                 key={index}
-                className="mx-16 relative p-5 rounded-2xl group "
+                className="mx-6 lg:mx-16 relative p-2 lg:p-5 rounded-2xl group "
 
               >
                 <div className="absolute inset-0 bg-black/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20 rounded-2xl">
@@ -153,10 +152,10 @@ export default function CaseStudies() {
                     backgroundRepeat: 'no-repeat',
                   }}
                 ></div>
-                <div className="bg-white/5 border  w-[550px] min-h-[560px] flex flex-col items-center justify-around  max-h-full rounded-2xl backdrop-blur-lg border-white/10 hover:border-white/20 transition-all duration-300 group hover:scale-105">
+                <div className="bg-white/5 border  w-[300px] md:w-[550px] h-[460px] md:min-h-[560px] flex flex-col items-center justify-around  max-h-full rounded-2xl backdrop-blur-lg border-white/10 hover:border-white/20 transition-all duration-300 group hover:scale-105">
                   <div className="p-6 space-y-12">
                     {/* <Badge className={`bg-gradient-to-r ${study.color} text-white mb-4`}>{study.category}</Badge> */}
-                    <h3 className="text-5xl  font-poppins text-white mb-3">
+                    <h3 className="text-xl md:text-5xl  font-poppins text-white mb-3">
                       {study.title.includes(" ") ? (
                         <>
                           <span className="text-blue-400">{study.title.split(" ")[0]}</span>{" "}
@@ -166,12 +165,12 @@ export default function CaseStudies() {
                         study.title
                       )}
                     </h3>
-                    <p className="text-blue-50 tracking-wider  font-poppins leading-relaxed text-xl">{study.description}</p>
+                    <p className="text-blue-50 tracking-wider  font-poppins leading-relaxed text-sm md:text-xl">{study.description}</p>
 
                     <div className="space-y-2">
-                      <h4 className="text-xl font-semibold text-blue-500 uppercase tracking-wide">Key Results:</h4>
+                      <h4 className="text-sm md:text-xl font-semibold text-blue-500 uppercase tracking-wide">Key Results:</h4>
                       {study.results.map((result, resultIndex) => (
-                        <div key={resultIndex} className="flex items-center text-xl font-poppins  text-blue-50">
+                        <div key={resultIndex} className="flex items-center text-xs md:text-xl font-poppins  text-blue-50">
                           <div className="w-2 h-2 rounded-full bg-blue-500 mr-3" />
                           {result}
                         </div>

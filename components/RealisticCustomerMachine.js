@@ -14,7 +14,7 @@ import {
     MeshBuilder,
     Mesh,
     Texture,
-    Animation // Added Animation import for custom keyframe animations
+    Animation 
 } from '@babylonjs/core';
 import { MoveRight } from 'lucide-react';
 
@@ -636,7 +636,7 @@ const RealisticCustomerMachine = () => {
     }, []);
 
     return (
-        <div className="w-full  h-screen xl:h-[70vh] focus:outline-none relative overflow-hidden" style={{ background: 'transparent' }}>
+        <div className="w-full  min-h-screen xl:h-[70vh] focus:outline-none relative overflow-hidden" style={{ background: 'transparent' }}>
             {isLoading && (
                 <div className="absolute inset-0 flex items-center justify-center bg-transparent z-10">
                     <div className="text-center">
@@ -663,11 +663,9 @@ const RealisticCustomerMachine = () => {
 
                     <div className='flex font-raleway uppercase text-gray-100 items-center justify-around'>
 
-                        <h1 className='text-5xl font-medium '>AdSpend</h1>
-                        {/* <div>
-                            <MoveRight className='w-12 h-12 xl:w-16 xl:h-16 ' />
-                        </div> */}
-                        <h2 className='text-5xl font-medium'>Customers</h2>
+                        <h1 className='text-lg md:text-5xl font-medium '>AdSpend</h1>
+                        
+                        <h2 className='text-lg md:text-5xl font-medium'>Customers</h2>
                     </div>
                 </div>
 

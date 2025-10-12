@@ -77,9 +77,9 @@ export default function HomePage() {
                 </div>
 
 
-                <button className="bg-gradient-to-r  cursor-pointer relative z-[100] mx-auto flex items-center gap-2 from-[#6366f1] to-[#ec4899] text-white px-6 py-4 rounded-full text-sm font-extralight hover:scale-105 transition-all duration-300 ease-in-out shadow-lg">
+                <a href='https://calendly.com/rohittangri/just-starting-out-clone' target='_blank' className="bg-gradient-to-r  cursor-pointer relative z-[100] mx-auto flex items-center gap-2 from-[#6366f1] to-[#ec4899] text-white px-6 py-4 rounded-full text-sm font-extralight hover:scale-105 transition-all duration-300 ease-in-out shadow-lg">
                   Work With Us <MoveRight />
-                </button>
+                </a>
               </div>
             </div>
           </div>

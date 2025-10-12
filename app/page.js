@@ -19,7 +19,7 @@ export default function HomePage() {
   ]
   return (
     <>
-    <Navbar action={'#journey'} target={'_self'}/>
+      <Navbar action={'#journey'} target={'_self'} />
       <div className="xl:h-auto md:min-h-screen relative overflow-hidden">
 
 
@@ -76,10 +76,12 @@ export default function HomePage() {
                   </p>
                 </div>
 
+                <div className="w-full flex item-center justify-center">
 
-                <a href='https://calendly.com/rohittangri/just-starting-out-clone' target='_blank' className="bg-gradient-to-r  cursor-pointer relative z-[100] mx-auto flex items-center gap-2 from-[#6366f1] to-[#ec4899] text-white px-6 py-4 rounded-full text-sm font-extralight hover:scale-105 transition-all duration-300 ease-in-out shadow-lg">
-                  Work With Us <MoveRight />
-                </a>
+                  <a href='https://calendly.com/rohittangri/just-starting-out-clone' target='_blank' className="bg-gradient-to-r  cursor-pointer relative z-[100] mx-auto inline-flex justify-center items-center gap-2 from-[#6366f1] to-[#ec4899] text-white px-6 py-4 rounded-full text-sm font-extralight hover:scale-105 transition-all duration-300 ease-in-out shadow-lg">
+                    Work With Us <MoveRight />
+                  </a>
+                </div>
               </div>
             </div>
           </div>
@@ -140,8 +142,8 @@ export default function HomePage() {
             {/* <div className="absolute top-0 left-0 right-0 h-[200px]  bg-gradient-to-b from-[#090916]/ to-transparent z-10" /> */}
 
             <div id="solutions" className="max-w-7xl mx-auto px-6 mb:py-16 lg:py-16 text-center">
-              <h2 id="journey"  className="text-4xl  font-raleway  text-white mb-8 ">
-                <span  className="font-medium font-poppins md:text-5xl lg:text-7xl xl:text-8xl ">Where Are You in Your</span> <br /> <span className=" text-4xl md:text-5xl lg:text-7xl text-gradient-animated">Advertising Journey?</span>
+              <h2 id="journey" className="text-4xl  font-raleway  text-white mb-8 ">
+                <span className="font-medium font-poppins md:text-5xl lg:text-7xl xl:text-8xl ">Where Are You in Your</span> <br /> <span className=" text-4xl md:text-5xl lg:text-7xl text-gradient-animated">Advertising Journey?</span>
               </h2>
               <p className="text-sm md:text-xl text-slate-300 max-w-4xl mx-auto xl:mb-0 leading-loose lg:mb-12">
                 We start by pinpointing exactly where you are in your advertising journey. <br className='hidden md:block' /> Every business is unique, and
